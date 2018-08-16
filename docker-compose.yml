@@ -1,0 +1,70 @@
+version: "3"
+
+services:
+
+  proxy:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - nb0
+      - nb1
+      - nb2
+      - nb3
+      - nb4
+      - nb5
+      - nb6
+      - nb7
+      - nb8
+      - nb9
+  nb0:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb1:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb2:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb3:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb4:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb5:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb6:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb7:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb8:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
+
+  nb9:
+    build:
+      context: .
+      dockerfile: notebook.dockerfile
