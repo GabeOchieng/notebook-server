@@ -67,12 +67,13 @@ def nginx_notebooks(x):
 
     return f"""
   upstream notebooks {{
+      hash $remote_addr$http_user_agent;
       ip_hash;
       {servers}
   }}
 """
 
-n_notebooks = 10
+n_notebooks = 2
 
 compose_full = compose_base + depends_on(n_notebooks) + ''.join(nb(i) for i in range(n_notebooks))
 nginx_full = nginx_base + nginx_notebooks(n_notebooks) + "}"
